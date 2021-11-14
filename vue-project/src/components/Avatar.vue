@@ -15,6 +15,7 @@ export default {
     props: {
         src: {
             type: String,
+            required: true,
         },
         size: {
             type: Number,
