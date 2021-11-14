@@ -1,8 +1,10 @@
 <template>
     <div class="author-info">
-        <Avatar :src="avatar" :size="48" class="avatar" />
+        <avatar :src="avatar" :size="48" class="avatar" />
         <div class="meta">
-            <div class="author">{{ name }}</div>
+            <div class="author" rel="author">
+                {{ name }}
+            </div>
             <div class="handle">{{ handle }}</div>
         </div>
     </div>
@@ -48,13 +50,17 @@ export default {
     }
 
     .meta {
+        min-width: 0;
         flex-grow: 1;
         justify-content: stretch;
 
         .author {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .handle {

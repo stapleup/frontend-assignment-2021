@@ -11,9 +11,11 @@
             </div>
         </div>
         <div v-if="images.length > 1" class="controls">
-            <button :disabled="step === 0" @click="prev">p</button>
+            <button :disabled="step === 0" @click="prev">
+                <img src="/icons/previous.png" />
+            </button>
             <button :disabled="step === images.length - 1" @click="next">
-                n
+                <img src="/icons/next.png" />
             </button>
         </div>
     </div>
@@ -37,14 +39,21 @@ export default {
             step: 0,
         }
     },
+    created() {
+        window.addEventListener('resize', this.setStepWidth)
+    },
     mounted() {
         this.setStepWidth()
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.setStepWidth)
     },
     methods: {
         setStepWidth() {
             const innerWidth = this.$refs.inner.scrollWidth
             const totalCards = this.images.length
             this.stepWidth = innerWidth / totalCards
+            this.adjustTransform()
         },
         next() {
             this.step += 1
@@ -80,7 +89,7 @@ export default {
     .image {
         width: 100%;
         height: 475px;
-        display: inline-block;
+        display: inline-flex;
     }
     .controls {
         position: absolute;
@@ -100,6 +109,9 @@ export default {
             border-radius: 999px;
             transition: opacity 0.1s;
             background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &:disabled {
                 opacity: 0;

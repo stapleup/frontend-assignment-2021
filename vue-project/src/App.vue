@@ -36,10 +36,8 @@ body {
     font-smoothing: antialiased;
     font-smoothing: grayscale;
     color: #fff;
-    margin-top: 40px;
+    margin: 40px auto;
     max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .text-grey {

@@ -30,5 +30,6 @@ export default {
     background-position: center;
     border-radius: 999px;
     border: 2px solid white;
+    flex-shrink: 0;
 }
 </style>

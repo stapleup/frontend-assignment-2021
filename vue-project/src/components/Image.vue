@@ -25,6 +25,8 @@ export default {
     position: relative;
     overflow: hidden;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 
     img {
         max-width: 100%;
