@@ -38,6 +38,7 @@ body {
     color: #fff;
     margin: 40px auto;
     max-width: 1440px;
+    overflow-x: hidden;
 }
 
 .text-grey {
