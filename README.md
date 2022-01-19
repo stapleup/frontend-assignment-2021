@@ -1,4 +1,4 @@
-# Welcome to The Cirqle Frontend Assignment
+# Welcome to The Frontend Assignment
 
 Please read the assignment description carefully.
 
